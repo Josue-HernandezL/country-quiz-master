@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend+Deca&display=swap');
+
+:root {
+    --color-text-white : #E2E4F3;
+    --color-card : #343964;
+    --color-button : linear-gradient(#E65895, #BC6BE8);
+}
+
+/* *{
+    border: 1px solid black;
+} */
+
+/* Overlay que cubre toda la pantalla */
+.congrats-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Tarjeta principal de felicitaciones */
+.congrats-card {
+    background: var(--color-card);
+    border-radius: 10px;
+    padding: 12px 12px 50px 12px;
+    max-width: 45vh;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenido principal */
+.congrats-content {
+    margin-bottom: 32px;
+}
+
+/* Imagen de felicitaciones */
+.congrats-image {
+    width: 44vh;
+    height: auto;
+    margin-bottom: 5px;
+    object-fit: contain;
+}
+
+/* Título principal */
+.congrats-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 16px 0;
+    color: var(--color-text-white);
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Puntuación */
+.congrats-score {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-text-white);
+    margin: 0 0 24px 0;
+    line-height: 1.4;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Botón para jugar de nuevo */
+.play-again-button {
+    background: var(--color-button);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 48px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 50%;
+}
+
+/* .play-again-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(255, 107, 157, 0.4);
+    background: linear-gradient(135deg, #ff7aa3 0%, #d15577 100%);
+} */
+
+.play-again-button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(255, 107, 157, 0.3);
+}
+
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .congrats-card {
+        padding: 32px 24px;
+        margin: 20px;
+    }
+    
+    .congrats-title {
+        font-size: 24px;
+    }
+    
+    .congrats-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .congrats-score {
+        font-size: 16px;
+    }
+    
+    .play-again-button {
+        padding: 14px 32px;
+        font-size: 16px;
+    }
+}
