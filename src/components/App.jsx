@@ -1,6 +1,7 @@
 import { Fragment, useEffect } from "react";
 import backgroundImage from "../assets/bg.jpg";
 import Congrats from "./Congrats";
+import Header from "./Header";
 
 const App = () => {
     useEffect(() => {
@@ -13,9 +14,15 @@ const App = () => {
 
     return (
         <>
-            <Congrats 
-            correctAnswer={7}
-            totalAnswer={10}/>
+            <Header 
+                currentPoints={2} 
+                totalPoints={10} 
+            />
+            {/* <Congrats 
+                correctAnswer={7}
+                totalAnswer={10}
+                onPlayAgain={() => console.log("Play again clicked!")}
+            /> */}
         </>
     )
 }
