@@ -7,9 +7,6 @@
     margin-bottom: 40px;
 }
 
-* {
-    border: 1px solid black;
-}
 
 /* Container del header */
 .header-container {
@@ -19,7 +16,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    margin-top: 4vh;
 }
 
 /* Título principal */
