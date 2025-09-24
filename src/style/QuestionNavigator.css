@@ -1,0 +1,171 @@
+/* QuestionNavigator.css */
+.question-navigator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.question-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    
+    /* Default state - Not answered, not active */
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.question-number:hover {
+    transform: scale(1.1);
+}
+
+/* Active state - Current question */
+.question-number.active {
+    background: linear-gradient(#E65895, #BC6BE8);
+    color: white;
+    transform: scale(1.15);
+}
+
+/* Answered state - Question has been answered */
+.question-number.answered:not(.active) {
+    background: linear-gradient(#E65895, #BC6BE8);
+    color: white;
+}
+
+/* Answered and active */
+.question-number.answered.active {
+    background: linear-gradient(#E65895, #BC6BE8);
+}
+
+/* Hover states */
+.question-number:not(.active):hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.question-number.answered:not(.active):hover {
+    background: linear-gradient(#E65895, #BC6BE8);
+    transform: scale(1.1);
+}
+
+/* Focus states for accessibility */
+.question-number:focus {
+    outline: none;
+}
+
+/* Animation for when question becomes answered */
+@keyframes answered-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.question-number.answered {
+    animation: answered-pulse 0.5s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .question-navigator {
+        gap: 5px;
+        padding: 16px 8px 12px 8px;
+        margin-bottom: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .question-number {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+    
+    .question-number.active {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 580px) {
+    .question-navigator {
+        gap: 4px;
+        padding: 14px 6px 10px 6px;
+        margin-bottom: 14px;
+    }
+    
+    .question-number {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .question-navigator {
+        gap: 3px;
+        padding: 12px 4px 8px 4px;
+        margin-bottom: 12px;
+        justify-content: center;
+    }
+    
+    .question-number {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    
+    .question-number:hover {
+        transform: scale(1.05);
+    }
+    
+    .question-number.active {
+        transform: scale(1.08);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .question-number {
+        border-width: 3px;
+    }
+    
+    .question-number.active {
+        border-color: #fff;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .question-number {
+        transition: none;
+    }
+    
+    .question-number:hover {
+        transform: none;
+    }
+    
+    .question-number.active {
+        transform: none;
+    }
+    
+    .question-number.answered {
+        animation: none;
+    }
+}

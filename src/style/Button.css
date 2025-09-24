@@ -1,0 +1,185 @@
+/* Button.css */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.btn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:not(:disabled):active {
+    transform: translateY(0);
+}
+
+/* Button variants */
+.btn-primary {
+    background: linear-gradient(135deg, #6B73FF 0%, #9B59B6 100%);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-primary:not(:disabled):hover {
+    box-shadow: 0 4px 12px rgba(107, 115, 255, 0.4);
+}
+
+.btn-secondary {
+    background: white;
+    color: #6B73FF;
+    border: 2px solid #6B73FF;
+}
+
+.btn-secondary:not(:disabled):hover {
+    background: #6B73FF;
+    color: white;
+    box-shadow: 0 4px 12px rgba(107, 115, 255, 0.3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #27AE60 0%, #2ECC71 100%);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-success:not(:disabled):hover {
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-danger:not(:disabled):hover {
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #6B73FF;
+    border: 2px solid #6B73FF;
+}
+
+.btn-outline:not(:disabled):hover {
+    background: #6B73FF;
+    color: white;
+}
+
+/* Button sizes */
+.btn-small {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.btn-medium {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 18px;
+    border-radius: 16px;
+}
+
+/* Full width variant */
+.btn-full {
+    width: 100%;
+}
+
+/* Icon buttons */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-icon-only {
+    width: auto;
+    aspect-ratio: 1;
+    padding: 12px;
+}
+
+.btn-icon-only.btn-small {
+    padding: 8px;
+}
+
+.btn-icon-only.btn-large {
+    padding: 16px;
+}
+
+/* Special states */
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: btn-spin 1s linear infinite;
+    color: white;
+}
+
+@keyframes btn-spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .btn-medium {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .btn-large {
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-small {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .btn-medium {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .btn-large {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+}
